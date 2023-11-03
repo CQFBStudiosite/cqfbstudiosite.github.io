@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Unifont";
-    src: url("Fonts/UniFont_14.0.01.ttf");
+    src: url("http://unifoundry.com/pub/unifont/unifont-15.1.04/font-builds/unifont-15.1.04.otf")
+    /* src: url("Fonts/UniFont_14.0.01.ttf"); */
 }
 #Block_biaotilan {
     /* 背景颜色 */
