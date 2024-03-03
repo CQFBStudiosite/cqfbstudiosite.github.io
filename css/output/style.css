@@ -689,6 +689,7 @@ html {
 #title_bar_list li {
   float: left;
   line-height: 89px;
+  width: 25%;
 }
 
 #menu {
@@ -733,6 +734,12 @@ html {
   font-size: 7px;
 }
 
+#lmc_mod_show {
+  position: relative;
+  top: 100px;
+  left: 20%
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;
@@ -762,10 +769,4 @@ html {
 
 .focus-visible\:outline-indigo-600:focus-visible {
   outline-color: #4f46e5;
-}
-
-@media (min-width: 640px) {
-  .sm\:flex-none {
-    flex: none;
-  }
 }
