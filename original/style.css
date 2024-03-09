@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Unifont";
+    src: url("Fonts/UniFont_14.0.01.ttf");
+}
+#Block_biaotilan {
+    /* 背景颜色 */
+    background-color: #222222;
+    /* 长度 */
+    width: calc();
+    /* 宽度 */
+    height: 55px;
+    /* 固定位置 */
+    position: none
+}
+li.clear {
+    /* 清空<li>标签样式 */
+    list-style: none;
+    padding: none;
+    margin: 0;
+    /* 横向排列项目 */
+    float: left;
+    /* 文字颜色 */
+    color: #EEEEEE;
+    /* 字体 */
+    font-family: "Unifont", system-ui;
+    /* 设置居中 */
+    line-height: 55px
+}
+a.clear_2 {
+    /* 清空<a>标签样式, 添加颜色 */
+    text-decoration: none;
+    outline: none;
+    color: #EEEEEE;
+    /* 字体 */
+    font-family: "Unifont", system-ui;
+    /* 隐藏 */
+    
+}
+.font {
+    font-family: "Unifont", system-ui;
+    position: relative; 
+    left: 10%
+}
+.font_with_picture {
+    font-family: "Unifont", system-ui;
+    position: relative; 
+}
+a:hover {
+    color: #AAAAAA
+}
+.Download_button {
+    border-width: 1px;
+    background-color: #0077FF;
+    position: relative;
+    width: 75px;
+    height: 40px;
+    font-size: 15px;
+    font-family: "Unifont", system-ui;
+    color: #EEEEEE; 
+    border-color: #DDDDDD; 
+    border-style: solid; 
+    border-width: 2px
+}
+button:hover {
+    background-color: #0099FF;
+}

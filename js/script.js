@@ -1,9 +1,15 @@
-function to_download() {
-    window.open("./download.html");
+function open_url(url){
+    window.open(url);
 }
-function to_tutorial() {
-    window.open("./tutorial.html");
+
+function redraw() {
+    // 仅做测试
+    if (window.innerWidth < 1280) {
+        console.log("redraw");
+    } else {
+        console.log("normal");
+    }
 }
-function download_lmc() {
-    window.open("https://wwk.lanzouj.com/im0Y71oy7nxi")
-}
+
+redraw();
+window.addEventListener("resize", redraw)

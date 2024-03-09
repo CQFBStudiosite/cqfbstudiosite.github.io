@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="user-select: none;">
     <head>
         <meta charset="utf8">
         <title>CQFB Studio</title>
@@ -7,30 +7,32 @@
         <script type="text/javascript" src="./js/script.js"></script>
     </head>
     <body class="bg-gradient-to-l from-teal-900 to-blue-900">
-        <nav id="title_bar" class="bg-gradient-to-l from-gray-800 to-gray-900">
-            <div id="title_bar_list">
-                <div id="logos">
-                    <object data="./picture/logo.svg" type="image/svg+xml" id="logo_svg"></object>
-                    <p class="hover:animate-pulse flex space-x-4 text-blue-400 ">CQFB Studio</p>
+        <nav id="title_bar" class="bg-gradient-to-l from-gray-800 to-gray-900 text-white">
+            <div class="flex pr-5">
+                <div class="flex">
+                    <object data="./picture/logo.svg" type="image/svg+xml" id="logo_svg" class="p-5 pr-7 pl-7"></object>
+                    <p class="text-blue-500 hover:text-blue-400 cursor-pointer" style="margin: auto;" onclick="open_url('./index.html')">CQFB Studio</p>
                 </div>
-                <ul>
-                    <li onclick="to_download()"><span>下载</span></li>
-                    <li onclick="to_tutorial()"><span>教程</span></li>
+                <ul class="flex gap-3 ml-auto">
+                    <li style="margin: auto;" onclick="open_url('./download.html')" class="hover:cursor-pointer"><span>下载</span></li>
+                    <li style="margin: auto;" onclick="open_url('./tutorial.html')" class="hover:cursor-pointer"><span>教程</span></li>
+                    <li style="margin: auto;" onclick="open_url('./members.html')" class="hover:cursor-pointer"><span>成员</span></li>
                 </ul>
             </div>
         </nav>
         
-        <div id="studio_title">
-            <div id="canvas">
-                <canvas id="logo" width="600" height="250"></canvas>
+        <div>
+            <div class="flex">
+                <canvas id="logo" width="600" height="250" style="margin: auto;"></canvas>
                 <script type="text/javascript" src="./js/draw.js"></script>
             </div>
-            <br><br>
+            <br>
+            <br>
             <hr class="border-solid border-2 border-sky-800" style="width: 80%; margin: auto;">
-            <div id="lmc_modpack" class="flex">
-                <div>
+            <div id="lmc_modpack" class="pl-10p pr-10p flex flex-col items-center text-center max-w-[1280px]:justify-center xl:flex-row xl:justify-between xl:text-left">
+                <div class="mb-8 xl:mb-0 text-base text-white">
                     <br>
-                    <p id="lmc_title">想要体验我们的整合包吗?</p>
+                    <p class="text-3xl text-white">想要体验我们的整合包吗?</p>
                     <br>
                     <span>Life in Minecraft 是一个针对 Minecraft 进行了多方面优化、细节添加,</span>
                     <br>
@@ -38,13 +40,13 @@
                     <br>
                     <br>
                     <br>
-                    <span id="lmc_version_information" class="bg-blue-600">游戏版本: 1.20.1 with Fabric loader 0.15.3</span>
+                    <span id="lmc_version_information" class="bg-blue-600 p-4 rounded-lg border-l-8 border-blue-700">游戏版本: 1.20.1 with Fabric loader 0.15.3</span>
                     <br>
                     <br>
                     <br>
-                    <button class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="download_lmc()">下载</button>
+                    <button class="items-center rounded-md bg-indigo-600 px-3 py-2 text-sm text-white shadow-sm hover:bg-indigo-500 " onclick="open_url('https://wwk.lanzouj.com/im0Y71oy7nxi')">下载 Preview</button>
                 </div>
-                <div id="lmc_mod_show">
+                <div>
                     <img src="./picture/create.png" width="412" height="161.5"></img>
                 </div>
             </div>

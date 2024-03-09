@@ -1,0 +1,11 @@
+.clear
+{
+    /* 清空<li>标签样式 */
+    list-style: none;
+    padding: none;
+    margin: 0;
+    /* 横向排列项目 */
+    float: left;
+    /* 文字颜色 */
+    color: #EEEEEE
+}

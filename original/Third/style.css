@@ -1,0 +1,121 @@
+body {
+    background-color: #333333;
+    user-select: none
+}
+
+#icon {
+    width: 50%;
+    font-size: 25px
+}
+#icon_c { color: #0077FF }
+#icon_q { color: #FF7700 }
+#icon_f { color: #77FF00C2 }
+#icon_b { color: #FFFF00 }
+
+@font-face {
+    font-family: "Unifont";
+    src: url("fonts/UniFont_14.0.01.ttf");
+}
+
+#title_bar {
+    background-color: #222222;
+    width: calc();
+    height: 55px;
+    position: none
+}
+#studio_title {
+    text-align: center
+}
+#title {
+    font-family: "Unifont", system-ui;
+    font-size: 100px;
+    color: #EEEEEE
+}
+#subtitle {
+    font-family: "Unifont", system-ui;
+    font-size: 20px;
+    color: #DDDDDD
+}
+
+hr.border {
+    width: 80%;
+    border-color: #666666;
+    border-width: 2px;
+    border-style: solid
+}
+
+li.clear {
+    list-style: none;
+    padding: none;
+    margin: 0;
+    float: left;
+    color: #EEEEEE;
+    font-family: "Unifont", system-ui;
+    line-height: 55px;
+    width: 25%
+}
+
+a.clear {
+    text-decoration: none;
+    outline: none;
+    color: #EEEEEE;
+    font-family: "Unifont", system-ui
+}
+
+.font {
+    font-family: "Unifont", system-ui;
+    position: relative; 
+    left: 10%
+}
+
+.text_with_picture {
+    font-family: "Unifont", system-ui;
+    position: relative;
+    color: #EEEEEE
+}
+
+a:hover {
+    color: #AAAAAA
+}
+
+.download_button {
+    border-width: 1px;
+    background-color: #0077FF;
+    position: relative;
+    width: 75px;
+    height: 40px;
+    font-size: 15px;
+    font-family: "Unifont", system-ui;
+    color: #EEEEEE; 
+    border-color: #DDDDDD; 
+    border-style: solid; 
+    border-width: 2px
+}
+
+button:hover {
+    background-color: #0099FF;
+}
+
+#lmc_modpack {
+    display: flex
+}
+#lmc_block {
+    position: relative;
+    left: 10%
+}
+.title {
+    font-family: "Unifont", system-ui;
+    color: #DDDDDD;
+    position: relative;
+}
+.lmc_text {
+    font-family: "Unifont", system-ui;
+    position: relative;
+    left: 2%;
+    color: #EEEEEE
+}
+#lmc_picture {
+    position: relative;
+    top: 100px;
+    left: 20%
+}

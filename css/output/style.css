@@ -548,6 +548,14 @@ video {
   position: fixed;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -556,22 +564,28 @@ video {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
   align-items: center;
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .rounded-md {
@@ -586,8 +600,17 @@ video {
   border-width: 2px;
 }
 
+.border-l-8 {
+  border-left-width: 8px;
+}
+
 .border-solid {
   border-style: solid;
+}
+
+.border-blue-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(29 78 216 / var(--tw-border-opacity));
 }
 
 .border-sky-800 {
@@ -629,6 +652,14 @@ video {
   --tw-gradient-to: #111827 var(--tw-gradient-to-position);
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -639,18 +670,52 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.pl-10p {
+  padding-left: 10%;
+}
+
+.pl-7 {
+  padding-left: 1.75rem;
+}
+
+.pr-10p {
+  padding-right: 10%;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.pr-7 {
+  padding-right: 1.75rem;
+}
+
+.pt-10p {
+  padding-top: 10%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
-.text-blue-400 {
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -664,90 +729,8 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-html {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
-#title_bar a, p, li {
-  color: #EEE;
-  margin: auto;
-  overflow: hidden;
-}
-
-#title_bar object {
-  padding: 20px;
-  padding-left: 40px;
-}
-
-#title_bar_list {
-  display: flex;
-  transition: color 2s;
-}
-
-#title_bar_list li {
-  float: left;
-  line-height: 89px;
-  width: 25%;
-}
-
-#menu {
-  display: flex;
-}
-
-#logos {
-  display: flex;
-}
-
-#canvas {
-  display: flex;
-}
-
-#canvas canvas {
-  margin: auto;
-}
-
-#canvas p {
-  line-height: 200px;
-  width: 200px;
-  color: #EEE;
-}
-
-#lmc_modpack {
-  padding-left: 10%;
-}
-
-#lmc_modpack span {
-  color: #EEE;
-  font-size: 15px;
-}
-
-#lmc_title {
-  font-size: 30px;
-}
-
-#lmc_version_information {
-  border-radius: 10px;
-  border-left: 10px solid rgb(29 78 216);
-  padding: 15px;
-  font-size: 7px;
-}
-
-#lmc_mod_show {
-  position: relative;
-  top: 100px;
-  left: 20%
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.hover\:animate-pulse:hover {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:bg-indigo-500:hover {
@@ -755,18 +738,25 @@ html {
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
-.focus-visible\:outline:focus-visible {
-  outline-style: solid;
+.hover\:text-blue-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
-.focus-visible\:outline-2:focus-visible {
-  outline-width: 2px;
-}
+@media (min-width: 1280px) {
+  .xl\:mb-0 {
+    margin-bottom: 0px;
+  }
 
-.focus-visible\:outline-offset-2:focus-visible {
-  outline-offset: 2px;
-}
+  .xl\:flex-row {
+    flex-direction: row;
+  }
 
-.focus-visible\:outline-indigo-600:focus-visible {
-  outline-color: #4f46e5;
+  .xl\:justify-between {
+    justify-content: space-between;
+  }
+
+  .xl\:text-left {
+    text-align: left;
+  }
 }
