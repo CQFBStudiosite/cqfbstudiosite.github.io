@@ -3,7 +3,57 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="styleSheet" href="./../css/index.css">
+        <style>
+            .title_bar {
+    background-color: #021d29;
+    border-color: #3ab4e8;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 32px 6px #4c4c4c;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.title_bar:hover {
+    background-color: #04354a;
+    border-color: #5fcdfc;
+    box-shadow: 0 0 32px 16px #353535;
+}
+
+.external_link_list {
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+}
+
+.external_link_list > li {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.title_block {
+    text-align: center;
+}
+
+p, span, h1, h2, h3, li {
+    color: #ffffff;
+}
+
+body {
+    background-color: #0d4c4c;
+}
+        </style>
         <title>CQFB Studio.</title>
         <script>document.addEventListener("DOMContentLoaded", function() {
 
