@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="styleSheet" href="./../css/index.css">
+        <title>CQFB Studio.</title>
+        <script>document.addEventListener("DOMContentLoaded", function() {
+
+            let input = document.getElementById('in');
+            let res = document.getElementById('res');
+            let result = document.getElementById('result');
+            let sub = document.getElementById('sub');
+            
+            function submit() {
+                let inputs = input.value.split(',');
+                for (let i=0;i<inputs.length;i++) {let k=inputs[i];inputs[i]=parseInt(k)}
+                result.innerHTML=findExpression(inputs,res.value);
+            }
+            sub.addEventListener('click', submit);
+            });
+            
+            function factorial(n) {
+                let result = 1;
+                for (let i = 2; i <= n; i++) {
+                    result *= i;
+                }
+                if (result === Infinity) {
+                    return null;
+                }
+                return result;
+            }
+            
+            function doubleFactorial(n) {
+                if (n <= 0) return null;
+                let result = 1;
+                for (let i = n; i >= 1; i -= 2) result *= i;
+                return result;
+            }
+            
+            function getTransforms(num) {
+                const transforms = [];
+                // 原始数值
+                transforms.push({ value: num, expr: `${num}` });
+                // 阶乘
+                const f = factorial(num);
+                if (f !== null) transforms.push({ value: f, expr: `(${num}!)` });
+                // 双阶乘
+                const df = doubleFactorial(num);
+                if (df !== null) transforms.push({ value: df, expr: `(${num}!!)` });
+                // 平方根（仅整数）
+                const sqrt = Math.sqrt(num);
+                if (Number.isInteger(sqrt)) transforms.push({ value: sqrt, expr: `sqrt(${num})` });
+                // 求导
+                transforms.push({ value: 0, expr: `d/dx(${num})` });
+                return transforms;
+            }
+            
+            function permute(arr) {
+                const result = [];
+                function backtrack(path, used) {
+                    if (path.length === arr.length) {
+                        result.push([...path]);
+                        return;
+                    }
+                    for (let i = 0; i < arr.length; i++) {
+                        if (!used[i]) {
+                            used[i] = true;
+                            path.push(arr[i]);
+                            backtrack(path, used);
+                            path.pop();
+                            used[i] = false;
+                        }
+                    }
+                }
+                backtrack([], new Array(arr.length).fill(false));
+                return result;
+            }
+            
+            function cartesianProduct(arrays) {
+                return arrays.reduce((acc, curr) => 
+                    acc.flatMap(arr => curr.map(item => [...arr, item])), [[]]);
+            }
+            
+            function solve(nums, exprs, target) {
+                if (nums.length === 1) {
+                    return Math.abs(nums[0] - target) < 1e-6 ? exprs[0] : null;
+                }
+            
+                for (let i = 0; i < nums.length; i++) {
+                    for (let j = 0; j < nums.length; j++) {
+                        if (i === j) continue;
+            
+                        const a = nums[i], aExpr = exprs[i];
+                        const b = nums[j], bExpr = exprs[j];
+                        const operations = [];
+            
+                        // 加法
+                        operations.push({ val: a + b, expr: `(${aExpr}+${bExpr})` });
+                        // 减法
+                        operations.push({ val: a - b, expr: `(${aExpr}-${bExpr})` });
+                        // 乘法
+                        operations.push({ val: a * b, expr: `(${aExpr}*${bExpr})` });
+                        // 除法
+                        if (b !== 0) operations.push({ val: a / b, expr: `(${aExpr}/${bExpr})` });
+                        // 模运算
+                        if (b !== 0) operations.push({ val: a % b, expr: `(${aExpr}%${bExpr})` });
+                        // 乘方
+                        operations.push({ val: Math.pow(a, b), expr: `(${aExpr}^${bExpr})` });
+            
+                        for (const op of operations) {
+                            const newNums = nums.filter((_, k) => k !== i && k !== j).concat(op.val);
+                            const newExprs = exprs.filter((_, k) => k !== i && k !== j).concat(op.expr);
+                            const result = solve(newNums, newExprs, target);
+                            if (result) return result;
+                        }
+                    }
+                }
+                return null;
+            }
+            
+            function findExpression(numbers, target) {
+                const permutations = permute(numbers);
+                for (const perm of permutations) {
+                    const transforms = perm.map(num => getTransforms(num));
+                    const combinations = cartesianProduct(transforms);
+                    for (const combo of combinations) {
+                        const values = combo.map(t => t.value);
+                        const exprs = combo.map(t => t.expr);
+                        const result = solve(values, exprs, target);
+                        if (result) return result.replace(/^\((.*)\)$/, '$1');
+                    }
+                }
+                return "No solution found";
+            }
+            
+            
+            </script>
+    </head>
+    <body>
+        <div style="height: 150px;">
+            <nav id="title_bar" class="title_bar"> 
+                <div>
+                    <p>C.Q.F.B.</p>
+                </div>
+                <div>
+                    <ul class="external_link_list">
+                        <li></li>
+                        <li>关于</li>
+                        <li>百科</li>
+                        <li>旧站</li>
+                        <li>外部链接</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <span>输入:</span><input id="in">
+            <span>目标:</span><input id="res">
+            <br>
+            <input type="button" value="确认" id="sub">
+            <br>
+            <span id="result">在这里会显示结果</span>
+        </div>
+    </body>
+</html>
